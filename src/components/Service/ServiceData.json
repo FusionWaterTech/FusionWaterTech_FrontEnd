@@ -1,0 +1,22 @@
+{
+  "ServiceData": [
+    {
+      "heading": "Sales",
+      "body": "Discover our extensive selection of RO purifiers tailored for both domestic and industrial needs. From sleek and contemporary designs to timeless classics, our range offers a perfect fit for every taste and requirement. Experience purified water like never before with our diverse range of fancy and classic models.",
+      "btnTxt": "Explore More",
+      "icon": "../../assets/buy.png"
+    },
+    {
+      "heading": "Rent",
+      "body": "Explore our extensive selection of RO purifiers catering to both domestic and industrial needs, offering a diverse range from fancy to classic models. Our rental services provide flexibility while ensuring access to clean water. With options for every preference, find the perfect RO purifier for your requirements and budget.",
+      "btnTxt": "Explore More",
+      "icon": "../../assets/buy.png"
+    },
+    {
+      "heading": "Service",
+      "body": "Offering comprehensive RO purifier servicing for both domestic and industrial settings. Ensure your water purification systems run smoothly with our expert maintenance, repair, and filter replacement services. Enjoy clean, safe water for your home or business without interruption.",
+      "btnTxt": "Explore More",
+      "icon": "../../assets/buy.png"
+    }
+  ]
+}
