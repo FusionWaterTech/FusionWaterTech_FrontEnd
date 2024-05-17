@@ -1,4 +1,4 @@
-import { Box, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import "./ScrollToTop.css";
@@ -27,7 +27,7 @@ const ScrollToTop = () => {
     });
   };
   return (
-    <Box>
+    <React.Fragment>
       {isVisible && (
         <IconButton
           onClick={scrollToTop}
@@ -44,7 +44,7 @@ const ScrollToTop = () => {
           <ExpandLessIcon />
         </IconButton>
       )}
-    </Box>
+    </React.Fragment>
   );
 };
 

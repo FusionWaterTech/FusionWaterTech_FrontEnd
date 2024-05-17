@@ -64,7 +64,7 @@ const Navbar = () => {
     <>
       <ScrollToTop />
       {/* Navbar start  */}
-      <Box>
+      <React.Fragment>
         <AppBar className="appbar" position="static" sx={appBarMain}>
           <Toolbar>
             {/* Logo */}
@@ -190,7 +190,7 @@ const Navbar = () => {
             </Box>
           </Toolbar>
         </AppBar>
-      </Box>
+      </React.Fragment>
     </>
   );
 };
