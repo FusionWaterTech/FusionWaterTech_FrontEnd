@@ -2,35 +2,44 @@ import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import ScrollToTop from "./ScrollToTop";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { Drawer, IconButton, Stack } from "@mui/material";
+import { Link } from "react-router-dom";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SX:CSS
 const appBarMain = {
+  // border: "2px solid yellow",
   // maxWidth: "100%",
   // height: { xs: "", sm: "", md: "", lg: "", xl: "" },
   bgcolor: "#3D52A0",
   color: "#EDE8F5",
   boxShadow: "10px 10px 20px rgba(0, 0, 0, 0.5)",
 };
-const navMenu = { display: { xs: "none", md: "flex" } };
+const navMenu = {
+  // border: "2px solid black",
+  // flexGrow: 1,
+  display: { xs: "none", md: "flex" },
+};
+
+const logo = {
+  fontSize: "1.5rem",
+};
 const navMenuLink = {
   fontSize: { xs: "none", sm: "none", md: "1rem", lg: "1rem", xl: "2rem" },
   marginLeft: { xs: "", sm: "", md: ".5rem", lg: ".5rem", xl: "1rem" },
 };
 const menuLogo = {
+  // border: "2px solid red",
   variant: "h2",
   color: "inherit",
   fontSize: { xs: "", sm: "", md: "2rem", lg: "2rem", xl: "3rem" },
   flexGrow: 1,
-  // m: 2,
-  // p: 2,
   display: { xs: "none", md: "flex" },
+  textDecoration: "none",
 };
 
 const hamMenu = {
@@ -40,8 +49,9 @@ const hamMenuIcon = {
   fontSize: { xs: "1.5rem", sm: "1.9rem" },
 };
 const hamMenuLogo = {
+  textDecoration: "none",
   fontSize: { xs: "1.5rem", sm: "1.5rem" },
-  m: 3,
+  m: 2,
   display: { xs: "flex", md: "none" },
 };
 
@@ -68,12 +78,22 @@ const Navbar = () => {
         <AppBar className="appbar" position="static" sx={appBarMain}>
           <Toolbar>
             {/* Logo */}
-            <Typography sx={menuLogo} aria-label="logo">
-              Fusion Water Tech
-            </Typography>
+            <Box sx={menuLogo}>
+              <Button
+                size="large"
+                color="inherit"
+                sx={logo}
+                component={Link}
+                to="/"
+              >
+                Fusion Water Tech
+              </Button>
+            </Box>
             {/* Navbar Navigation menu */}
             <Box sx={navMenu}>
               <Button
+                component={Link}
+                to="/"
                 color="inherit"
                 size="large"
                 variant="outlined"
@@ -84,7 +104,10 @@ const Navbar = () => {
               >
                 Home
               </Button>
+
               <Button
+                component={Link}
+                to="/"
                 color="inherit"
                 size="large"
                 variant="outlined"
@@ -96,6 +119,8 @@ const Navbar = () => {
                 Service
               </Button>
               <Button
+                component={Link}
+                to="/"
                 color="inherit"
                 size="large"
                 variant="outlined"
@@ -106,15 +131,21 @@ const Navbar = () => {
               >
                 Contact Us
               </Button>
+              <Button
+                component={Link}
+                to="/gallery"
+                color="inherit"
+                size="large"
+                variant="outlined"
+                sx={navMenuLink}
+              >
+                Gallery
+              </Button>
             </Box>
             {/* Hamburger Menue */}
             <Box sx={hamMenu}>
               {/* Ham Icon */}
-              <IconButton
-                edge="start"
-                color="inherit"
-                onClick={openMenu}
-              >
+              <IconButton edge="start" color="inherit" onClick={openMenu}>
                 <MenuIcon sx={hamMenuIcon} />
               </IconButton>
               {/* responsive Menu */}
@@ -129,6 +160,8 @@ const Navbar = () => {
               >
                 <Stack bgcolor={"#3D52A0"} color={"#EDE8F5"}>
                   <Button
+                    component={Link}
+                    to="/"
                     color="inherit"
                     size="large"
                     variant="outlined"
@@ -141,6 +174,8 @@ const Navbar = () => {
                     Home
                   </Button>
                   <Button
+                    component={Link}
+                    to="/"
                     color="inherit"
                     size="large"
                     variant="outlined"
@@ -153,6 +188,8 @@ const Navbar = () => {
                     Service
                   </Button>
                   <Button
+                    component={Link}
+                    to="/"
                     color="inherit"
                     size="large"
                     variant="outlined"
@@ -163,6 +200,19 @@ const Navbar = () => {
                     }}
                   >
                     Contact Us
+                  </Button>
+                  <Button
+                    color="inherit"
+                    size="large"
+                    variant="outlined"
+                    component={Link}
+                    to="/gallery"
+                    sx={{ m: 1 }}
+                    onClick={() => {
+                      closeMenu();
+                    }}
+                  >
+                    Gallery
                   </Button>
                   <IconButton onClick={closeMenu}>
                     <CloseIcon
@@ -178,15 +228,11 @@ const Navbar = () => {
                 </Stack>
               </Drawer>
 
-              <Typography
-                color="inherit"
-                variant="h5"
-                component="div"
-                sx={hamMenuLogo}
-                aria-label="logo"
-              >
-                Fusion Water Tech
-              </Typography>
+              <Box sx={hamMenuLogo}>
+                <Button color="inherit" sx={logo} component={Link} to="/">
+                  Fusion Water Tech
+                </Button>
+              </Box>
             </Box>
           </Toolbar>
         </AppBar>
