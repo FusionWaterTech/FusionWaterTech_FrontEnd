@@ -91,11 +91,16 @@ const Contact = () => {
   //////////////////////////////////////////////////////////////////////////////
   const subject = import.meta.env.VITE_APP_WHATSAPP_SUBJECT;
   const body = import.meta.env.VITE_APP_WHATSAPP_BODY;
-  const phoneNumber = import.meta.env.VITE_APP_WHATSAPP_PHONE_NUMBER;
+  const phoneNumber = import.meta.env.VITE_APP_WHATSAPP_PHONE_NUMBER.replace(
+    /\s+/g,
+    ""
+  );
+
   const mapUrl = import.meta.env.VITE_APP_MAP_URL;
 
   const whatsappMessage = encodeURIComponent(`${subject}\n${body}`);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+  console.log(`whatsappUrl is ${whatsappUrl}`);
 
   const serviceId = import.meta.env.VITE_APP_EMAIL_SERVICE_ID;
   const templateId = import.meta.env.VITE_APP_EMAIL_TEMPLATE_ID;
