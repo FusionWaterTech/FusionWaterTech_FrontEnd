@@ -94,13 +94,14 @@ const Contact = () => {
   const phoneNumber = import.meta.env.VITE_APP_WHATSAPP_PHONE_NUMBER.replace(
     /\s+/g,
     ""
-  );
+  ); // Remove any spaces
 
+  // const phoneNumber = import.meta.env.VITE_APP_WHATSAPP_PHONE_NUMBER;
   const mapUrl = import.meta.env.VITE_APP_MAP_URL;
 
   const whatsappMessage = encodeURIComponent(`${subject}\n${body}`);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
-  console.log(`whatsappUrl is ${whatsappUrl}`);
+  // console.log(`whatsappUrl is ${whatsappUrl}`);
 
   const serviceId = import.meta.env.VITE_APP_EMAIL_SERVICE_ID;
   const templateId = import.meta.env.VITE_APP_EMAIL_TEMPLATE_ID;
